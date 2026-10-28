@@ -35,6 +35,9 @@
     .brand { color: var(--ink); text-decoration: none; font: 600 20px/1 var(--serif); letter-spacing: .02em; }
     .brand-mark { color: var(--accent); margin-right: 9px; }
     .header-note { color: var(--muted); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+    .header-tools { display: flex; align-items: center; gap: 18px; }
+    .language-toggle { border: 1px solid var(--line); border-radius: 999px; padding: 7px 12px; background: var(--surface); color: var(--ink); font: 600 12px var(--sans); cursor: pointer; }
+    .language-toggle:hover { border-color: var(--accent); color: var(--accent); }
     .hero { padding: 68px 0 48px; border-bottom: 1px solid var(--line); }
     .eyebrow { color: var(--accent); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; font-weight: 650; }
     h1 { margin: 13px 0 14px; font: 400 clamp(42px, 8vw, 68px)/1.08 var(--serif); letter-spacing: -.035em; }
@@ -72,7 +75,7 @@
   <div class="topline" aria-hidden="true"></div>
   <header>
     <a class="brand" href="#top"><span class="brand-mark">✳</span>Stillline</a>
-    <span class="header-note">A little room for what matters</span>
+    <div class="header-tools"><span class="header-note" data-i18n="tagline">A little room for what matters</span><button class="language-toggle" id="language-toggle" type="button" aria-label="切换到简体中文">中文</button></div>
   </header>
   <main id="top">
     <div class="hero">
@@ -189,5 +192,65 @@
     <span>© 2026 Stillline</span>
     <span>Capture life, one moment at a time.</span>
   </footer>
+<script>
+  const zh = {
+    tagline: "为重要时刻留一方空间", eyebrow: "你的时刻，由你作主", title: "隐私政策",
+    intro: "Stillline 是一款个人时间线应用，帮助你留住想要记得的时刻。以下说明应用如何处理你选择添加的记录、日期、分类和照片。",
+    effective: "生效日期：2026年10月26日", toc: "本页内容",
+    nav1: "你在应用中创建的信息", nav2: "本地存储", nav3: "相机和照片", nav4: "iCloud 与备份", nav5: "分享与第三方服务", nav6: "信息保留与删除", nav7: "儿童隐私", nav8: "加利福尼亚州隐私权", nav9: "政策变更", nav10: "联系我们",
+    sections: [
+      ["1. 你在应用中创建的信息", "Stillline 允许你记录个人时刻：创建记录、添加日期和时间、将记录归入分类，以及附加照片。", "根据你的使用方式，应用存储的信息可能包括：", "记录内容：你输入的标题、描述、日期和时间。", "分类和记录管理信息：你创建或选择的分类，以及与有效、已删除或已移至废纸篓的记录相关的信息。", "照片：你从照片图库中选择或用相机拍摄并附加到记录的图片。", "应用相关数据：存储、显示和管理记录及照片所需的文件和其他信息。", "使用应用的核心功能无需创建账户。"],
+      ["2. 信息的存储方式和位置", "Stillline 的设计是在你的设备本地存储时间线内容。根据当前实现：", "记录、分类和废纸篓数据以 JSON 文件形式存储在应用本地的 Application Support 目录中。", "附加到记录的照片以 JPEG 文件形式存储在应用本地的 Documents 目录中。", "应用运行时可能使用临时内存缓存来显示照片。", "当前版本不提供自有用户账户系统、用于时间线内容的服务器端数据库或云同步服务。根据我们对当前实现的审查，我们未发现会将你的时间线记录或附加照片上传到我们运营的服务器的功能。", "此说明仅涉及应用自身的数据处理功能，不涵盖 iOS、设备备份或你自行选择使用的其他服务如何处理数据。"],
+      ["3. 相机和照片图库", "从照片图库选择照片", "当你使用 iOS 系统照片选择器选取照片时，应用会处理所选图片，并在本地存储中保存副本，以便显示在相应的时间线记录中。", "使用相机拍照", "当你使用应用的相机功能拍照时，应用会调用 iOS 相机界面。拍摄后，应用会尝试将原始图片保存到设备的系统照片图库，并另外在应用本地存储中保存处理后的副本，用于时间线记录。", "这两项操作彼此独立。从 Stillline 记录中移除照片，不会自动删除已保存到系统照片图库的原始图片。你可以在 Apple 照片 App 中单独管理该图片。", "相机和照片访问受 iOS 提供的权限与设置控制。你可以在设备的“设置”中查看或更改相关权限。"],
+      ["4. iCloud 和设备备份", "应用不提供自有的 iCloud 同步或云存储服务。", "不过，根据 iOS 行为和设备设置（包括是否启用了 iCloud 云备份），存储在应用本地目录中的文件可能会包含在设备备份中。", "设备备份由 Apple 管理，并受 Apple 的服务、政策和你的设备设置约束。我们不为你的时间线内容运营单独的备份服务。", "你可以通过设备上的相关设置查看和管理设备备份。单独保存到系统照片图库的照片，应通过照片 App 以及你所用服务的设置进行管理。"],
+      ["5. 分享和第三方服务", "当前版本的 Stillline 不含广告功能，也不会有意集成第三方广告、分析或跟踪 SDK。", "我们不会出售你的时间线记录或附加照片，也不会通过由应用运营的服务，将这些内容分享给第三方用于其独立目的。", "应用使用 Apple 提供的 iOS 框架执行相机访问和照片选择等功能。Apple 通过其操作系统和服务处理信息的方式，受 Apple 自身条款和隐私惯例约束。", "你选择使用的其他服务（包括设备备份服务）可能会根据其自身政策和设置处理数据。"],
+      ["6. 信息保留与删除", "你的记录和附加照片会保留在应用本地存储中，直到你将其删除，或应用及其关联本地数据从设备中移除；但仍受 iOS 的正常存储和备份行为影响。", "删除单个项目", "应用提供编辑记录、从记录中移除照片、将记录移至废纸篓、恢复支持的记录以及永久删除项目等控制功能。", "应用会根据本地存储的照片文件是否仍被记录或其他数据引用来管理这些文件。从一条记录中移除照片，不一定会删除仍在其他位置被引用的本地文件。", "移除应用", "删除 Stillline 会从设备中移除应用及其关联本地数据，具体受 iOS 行为影响。这不会自动删除单独保存到系统照片图库的照片或可能保留在设备备份中的副本。", "系统副本和备份", "保存到系统照片图库的照片以及包含在设备备份中的副本，必须通过照片 App、设备设置或相关服务设置单独管理。", "删除记录或卸载应用时，我们无法保证信息的每个副本都能立即从所有备份或其他由系统管理的位置移除。如对应用的删除功能有疑问，请通过下方邮箱联系我们。"],
+      ["7. 儿童隐私", "Stillline 是一款面向一般用户的个人记录应用，并非专门面向儿童。", "应用无需账户，当前实现也不提供将时间线记录或附加照片传输到我们运营的服务器的服务。", "如果应用功能或目标受众发生变化，并影响儿童信息的处理方式，我们会酌情审查并更新本隐私政策。", "家长或监护人如对应用的隐私惯例有疑问，可通过下方联系方式联系我们。"],
+      ["8. 加利福尼亚州隐私权", "视具体情况以及适用法律是否涵盖开发者和相关数据处理活动而定，加利福尼亚州居民可能享有《加利福尼亚州消费者隐私法》（CCPA，经《加利福尼亚州隐私权法案》（CPRA）修订）赋予的权利。", "当前版本的 Stillline 旨在将时间线记录和附加照片存储在你的设备本地。我们未发现当前实现中存在将这些内容上传到我们运营的服务器的功能。我们不会出售时间线记录或附加照片，也不会通过应用运营的服务为跨场景行为广告分享这些内容。", "在适用法律赋予你有关个人信息的权利时，这些权利可能包括知情、访问、删除或更正某些个人信息的权利，选择退出某些出售或分享的权利，以及行使适用隐私权时不受非法歧视的权利。", "由于应用不为你的时间线内容维护服务器端账户或数据库，本地存储的信息通常可通过应用管理，或通过从设备中移除其本地数据来处理。本说明不免除适用法律可能规定的任何义务。", "如有隐私问题或请求，请通过下方邮箱联系我们。我们会按照适用法律要求作出回应。"],
+      ["9. 隐私政策变更", "当应用功能、数据处理惯例或适用法律要求发生变化时，我们可能会更新本隐私政策。", "任何更新版本都会发布在相同的公开网址，并注明修订后的生效日期。我们建议你定期查看本政策，尤其是在应用进行重大更新后。"],
+      ["10. 联系我们", "如对本隐私政策或 Stillline 的隐私惯例有疑问，请联系："]
+    ], ending: "本隐私政策适用于当前版本的 Stillline。如果未来版本新增云同步、账户服务或其他数据处理功能，我们会酌情审查并更新本政策。", footer: "记录生活，一刻一瞬。"
+  };
+  const original = new Map();
+  document.querySelectorAll("[data-i18n], .hero h1, .hero .intro, .hero .updated, nav p, nav a, article section, article > p, footer span").forEach((el) => original.set(el, el.innerHTML));
+  const toggle = document.getElementById("language-toggle");
+  let isChinese = false;
+  toggle.addEventListener("click", () => {
+    isChinese = !isChinese;
+    document.documentElement.lang = isChinese ? "zh-CN" : "en";
+    toggle.textContent = isChinese ? "EN" : "中文";
+    toggle.setAttribute("aria-label", isChinese ? "Switch to English" : "切换到简体中文");
+    document.title = isChinese ? "隐私政策 — Stillline" : "Privacy Policy — Stillline";
+    document.querySelector('meta[name="description"]').content = isChinese ? "Stillline 隐私政策：了解应用如何处理你添加的记录、日期、分类和照片。" : "Privacy Policy for Stillline, a quiet space to keep life's moments.";
+    if (!isChinese) { original.forEach((html, el) => el.innerHTML = html); return; }
+    document.querySelector('[data-i18n="tagline"]').textContent = zh.tagline;
+    const hero = document.querySelector(".hero");
+    hero.querySelector(".eyebrow").textContent = zh.eyebrow;
+    hero.querySelector("h1").textContent = zh.title;
+    hero.querySelector(".intro").textContent = zh.intro;
+    hero.querySelector(".updated").textContent = zh.effective;
+    const nav = document.querySelector("nav");
+    nav.querySelector("p").textContent = zh.toc;
+    nav.querySelectorAll("a").forEach((a, i) => a.textContent = zh[`nav${i+1}`]);
+    document.querySelectorAll("article section").forEach((section, i) => {
+      const rows = zh.sections[i];
+      section.querySelector("h2").textContent = rows[0];
+      const paras = [...section.querySelectorAll("p")], heads = [...section.querySelectorAll("h3")], items = [...section.querySelectorAll("li")];
+      let pi = 1, hi = 0, li = 0;
+      [...section.children].forEach(el => {
+        if (el.tagName === "P") el.textContent = rows[pi++];
+        else if (el.tagName === "H3") el.textContent = rows[pi++];
+        else if (el.tagName === "UL") [...el.children].forEach(liEl => {
+          const text = rows[pi++];
+          const strong = liEl.querySelector("strong");
+          if (strong) { const colon = text.indexOf("："); strong.textContent = text.slice(0, colon + 1); liEl.lastChild.textContent = " " + text.slice(colon + 1).trim(); }
+          else liEl.textContent = text;
+        });
+      });
+    });
+    document.querySelector("article > p").textContent = zh.ending;
+    document.querySelectorAll("footer span")[1].textContent = zh.footer;
+  });
+</script>
 </body>
 </html>
