@@ -3,100 +3,176 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f6f5f1">
-  <meta name="description" content="Privacy Policy for Stillline, a quiet space to keep life's moments.">
-  <title>Privacy Policy — Stillline</title>
+  <meta name="theme-color" content="#fbfbfd">
+  <link rel="icon" type="image/svg+xml" href="stillline-mark.svg">
+  <link rel="icon" type="image/png" sizes="256x256" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <meta property="og:title" content="Privacy Policy — Stillline Moments">
+  <meta property="og:description" content="Privacy Policy for Stillline Moments, a quiet space to keep life's moments.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="description" content="Privacy Policy for Stillline Moments, a quiet space to keep life's moments.">
+  <title>Privacy Policy — Stillline Moments</title>
   <style>
-    :root {
-      color-scheme: light;
-      --paper: #f6f5f1;
-      --surface: #fffefa;
-      --ink: #242723;
-      --muted: #72776f;
-      --line: #e6e5dc;
-      --accent: #697a68;
-      --accent-soft: #e8eee5;
-      --serif: Georgia, "Times New Roman", serif;
-      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font: 16px/1.75 var(--sans);
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: var(--accent); text-underline-offset: 3px; }
-    .topline { height: 5px; background: var(--accent); }
-    header, main, footer { width: min(100% - 40px, 920px); margin-inline: auto; }
-    header { padding: 35px 0 20px; display: flex; align-items: center; justify-content: space-between; }
-    .brand { color: var(--ink); text-decoration: none; font: 600 20px/1 var(--serif); letter-spacing: .02em; }
-    .brand-mark { color: var(--accent); margin-right: 9px; }
-    .header-note { color: var(--muted); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
-    .header-tools { display: flex; align-items: center; gap: 18px; }
-    .language-toggle { border: 1px solid var(--line); border-radius: 999px; padding: 7px 12px; background: var(--surface); color: var(--ink); font: 600 12px var(--sans); cursor: pointer; }
-    .language-toggle:hover { border-color: var(--accent); color: var(--accent); }
-    .hero { padding: 68px 0 48px; border-bottom: 1px solid var(--line); }
-    .eyebrow { color: var(--accent); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; font-weight: 650; }
-    h1 { margin: 13px 0 14px; font: 400 clamp(42px, 8vw, 68px)/1.08 var(--serif); letter-spacing: -.035em; }
-    .intro { max-width: 600px; color: #5f645d; font: 18px/1.65 var(--serif); }
-    .updated { margin-top: 27px; color: var(--muted); font-size: 13px; }
-    .layout { display: grid; grid-template-columns: 205px minmax(0, 1fr); gap: 64px; padding: 48px 0 72px; }
-    nav { align-self: start; position: sticky; top: 24px; padding: 8px 0; }
-    nav p { margin: 0 0 12px; color: var(--muted); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
-    nav a { display: block; padding: 6px 0; color: #697067; font-size: 13px; text-decoration: none; }
-    nav a:hover { color: var(--accent); }
-    article section { padding: 0 0 28px; margin: 0 0 29px; border-bottom: 1px solid var(--line); scroll-margin-top: 24px; }
-    article section:last-child { border-bottom: 0; }
-    h2 { margin: 0 0 12px; font: 400 27px/1.25 var(--serif); letter-spacing: -.015em; }
-    p { margin: 0 0 13px; color: #555b54; }
-    ul { margin: 8px 0 14px; padding-left: 21px; color: #555b54; }
-    li { padding-left: 4px; margin: 5px 0; }
-    .contact { margin-top: 14px; padding: 18px 20px; border-radius: 10px; background: var(--surface); }
-    footer { border-top: 1px solid var(--line); padding: 23px 0 32px; display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font-size: 12px; }
-    @media (max-width: 700px) {
-      header, main, footer { width: min(100% - 32px, 620px); }
-      header { padding-top: 25px; }
-      .header-note { font-size: 10px; }
-      .hero { padding: 49px 0 35px; }
-      .layout { display: block; padding: 32px 0 45px; }
-      nav { position: static; display: flex; gap: 9px 16px; flex-wrap: wrap; padding: 0 0 25px; border-bottom: 1px solid var(--line); margin-bottom: 32px; }
-      nav p { width: 100%; margin-bottom: 0; }
-      nav a { padding: 3px 0; }
-      footer { display: block; }
-      footer span { display: block; margin: 4px 0; }
-    }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-  </style>
+  :root{
+    --paper:#fbfbfd; --surface:#ffffff; --grey:#f5f5f7; --ink:#1d1d1f;
+    --muted:#6e6e73; --body:#424245; --line:#d2d2d7; --accent:#0066cc;
+    --radius:18px;
+    --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scrollbar-gutter:stable}
+  body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  ::selection{background:#d9e8ff}
+  .skip-link{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:10px 16px;border-radius:0 0 8px 0;z-index:100}
+  .skip-link:focus{left:0;color:#fff}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+  .topline{display:none}
+  header{position:sticky;top:0;z-index:50;background:rgba(251,251,253,.82);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.08);display:flex;align-items:center;gap:24px;padding:8px max(22px,calc((100vw - 1024px)/2));min-height:52px}
+  .brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+  .brand:hover{text-decoration:none}
+  .brand-mark{height:36px;width:auto;display:block}
+  .brand-name{font-size:17px;font-weight:600;letter-spacing:-.01em;color:var(--ink);white-space:nowrap}
+  .brand-name .brand-en{font-weight:400;color:var(--muted)}
+  .brand span{font-weight:600}
+  .site-nav{display:flex;gap:2px;margin-left:auto;align-items:center}
+  .site-nav a{font-size:12px;line-height:1;color:var(--ink);padding:7px 11px;border-radius:999px;white-space:nowrap}
+  .site-nav a:hover{color:var(--accent);text-decoration:none;background:var(--grey)}
+  .site-nav a[aria-current="page"]{background:var(--grey);font-weight:600;color:var(--ink)}
+  .header-tools{display:flex;align-items:center;gap:12px;flex-shrink:0}
+  .language-toggle{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 13px;font:600 12px/1 var(--sans);color:var(--ink);cursor:pointer}
+  .language-toggle:hover{border-color:var(--muted)}
+  main{display:block;max-width:1024px;margin:0 auto;padding:0 22px 96px}
+  main>p{text-align:center;color:var(--muted);max-width:640px;margin:0 auto 12px}
+  main nav{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:center;margin-top:32px;padding-top:28px;border-top:1px solid var(--line)}
+  .content{max-width:1024px;margin:0 auto;padding:0 22px}
+  .hero{max-width:1024px;margin:0 auto;padding:88px 22px 56px;text-align:center}
+  .eyebrow{font-size:17px;font-weight:600;color:var(--accent);margin:0 0 12px}
+  h1{font-size:clamp(40px,6vw,56px);line-height:1.08;letter-spacing:-.022em;font-weight:700;margin:0 0 16px;text-align:center}
+  .lead{font-size:21px;line-height:1.47;color:var(--muted);max-width:640px;margin:0 auto}
+  .intro{font-size:21px;line-height:1.47;color:var(--muted);max-width:680px;margin:0 auto}
+  .updated{margin-top:28px;font-size:14px;color:var(--muted)}
+  .intro-copy{max-width:680px;margin:0 auto}
+  .intro-copy p{font-size:21px;line-height:1.47;color:var(--muted);text-align:center;margin:0 0 12px}
+  .content>p{font-size:19px;line-height:1.6;color:var(--body);max-width:680px;margin:0 auto 16px;text-align:center}
+  section{margin-top:72px;padding-top:64px;border-top:1px solid var(--line)}
+  .features-section{margin-top:80px}
+  h2{font-size:clamp(28px,4vw,36px);line-height:1.15;letter-spacing:-.02em;font-weight:700;text-align:center;margin:0 0 16px}
+  h3{font-size:24px;line-height:1.25;font-weight:600;letter-spacing:-.015em;margin:0 0 8px;text-align:center}
+  .content section p{font-size:17px;line-height:1.6;color:var(--body);max-width:680px;margin:0 auto 12px;text-align:center}
+  .feature-list{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+  .feature{background:var(--grey);border-radius:var(--radius);padding:44px 32px 0;text-align:center;overflow:hidden}
+  .feature h3{margin-bottom:10px}
+  .feature p{color:var(--body);font-size:17px;line-height:1.55;max-width:420px;margin:0 auto 28px;text-align:center}
+  .feature-shot{margin:0;background:var(--surface);border-radius:14px 14px 0 0;padding:28px 24px 0;box-shadow:0 -4px 24px rgba(0,0,0,.04)}
+  .feature-shot img{width:220px;max-width:100%;height:auto;display:block;margin:0 auto;border-radius:12px 12px 0 0;box-shadow:0 12px 32px rgba(0,0,0,.12)}
+  .tip-screens{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:640px;margin:36px auto 0}
+  .tip-screens-single{grid-template-columns:1fr;max-width:340px}
+  .tip-screens figure{margin:0;background:var(--grey);border-radius:var(--radius);padding:28px 24px 0;overflow:hidden}
+  .tip-screens img{width:220px;max-width:100%;height:auto;display:block;margin:0 auto;border-radius:12px 12px 0 0;box-shadow:0 12px 32px rgba(0,0,0,.12)}
+  .tip-note{max-width:640px;margin:28px auto 0;background:var(--grey);border-radius:14px;padding:16px 20px;font-size:15px;line-height:1.55;color:var(--body);text-align:left}
+  .tip-note strong{color:var(--ink)}
+  .closing{margin-top:96px;padding:64px 24px;background:var(--grey);border-radius:var(--radius);text-align:center}
+  .closing strong{font-size:clamp(24px,3.5vw,32px);line-height:1.2;letter-spacing:-.02em;font-weight:700}
+  .closing p{margin:14px auto 0;max-width:560px;color:var(--body);font-size:17px;text-align:center}
+  .signature{margin:16px 0 0;color:var(--muted);font-size:14px}
+  .last-line{margin:8px 0 0;color:var(--muted);font-size:17px}
+  .contact-card{max-width:520px;margin:36px auto 0;background:var(--grey);border-radius:var(--radius);padding:32px;text-align:center}
+  .contact-card p{margin:0 0 8px;font-size:19px;color:var(--ink);text-align:center}
+  .contact-card p:last-child{margin-bottom:0}
+  footer{background:var(--grey);color:var(--muted);font-size:12px;line-height:1.6;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:24px max(22px,calc((100vw - 1024px)/2))}
+  footer span{color:var(--muted)}
+  /* Privacy page: narrow centred legal column, TOC as a grey card */
+  .layout{display:block;max-width:980px;margin:0 auto;padding:0 22px}
+  .layout>nav{position:static;background:var(--grey);border-radius:var(--radius);padding:28px 32px;margin:40px 0 8px}
+  .layout>nav p{font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:0 0 14px}
+  .layout>nav a{display:inline-block;margin:0 20px 10px 0;font-size:15px;line-height:1.5}
+  /* Sticky sidebar on desktop, cascading reveal */
+  @media (min-width:901px){
+    .layout{display:grid;grid-template-columns:230px minmax(0,1fr);gap:56px;max-width:1080px}
+    .layout>nav{position:sticky;top:76px;align-self:start;background:transparent;padding:0;margin:48px 0 0;border-top:0}
+    .layout>nav a{display:block;margin:0 0 12px}
+  }
+  /* one item per line at any width */
+  .layout>nav{display:block}
+  .layout>nav a{display:block;margin:0 0 10px}
+  .js .pop{opacity:0;transform:translateX(-8px)}
+  .js .play .pop{opacity:1;transform:translateX(0);transition:opacity .5s ease var(--d,0s),transform .6s ease var(--d,0s)}
+  @media (prefers-reduced-motion:reduce){.js .pop{opacity:1;transform:none;transition:none}}
+  /* Tighter section rhythm + list spacing */
+  article:not(.content) section{margin-top:48px;padding-top:40px}
+  article:not(.content) li{margin-bottom:8px}
+  article:not(.content) section{margin-top:56px;padding-top:48px}
+  article:not(.content) h2{font-size:28px;text-align:left;margin-bottom:14px}
+  article:not(.content) h3{font-size:20px;text-align:left;margin:24px 0 8px}
+  article:not(.content) p{font-size:17px;line-height:1.65;color:var(--body);text-align:left;max-width:none;margin:0 0 12px}
+  article:not(.content) ul{font-size:17px;line-height:1.65;color:var(--body);margin:0 0 12px;padding-left:22px}
+  article:not(.content) li{margin-bottom:6px}
+  article:not(.content)>p{font-size:17px;text-align:left;max-width:none;margin:0 0 12px}
+  article:not(.content) .contact{font-size:19px}
+
+  .tip-screens-framed{max-width:640px}
+  .tip-screens-framed figure{background:transparent;padding:0;border-radius:0;overflow:visible}
+  .tip-screens-framed img{width:280px;border-radius:0;box-shadow:none}
+  @media (max-width:760px){
+    header{gap:12px;padding:8px 16px}
+    .site-nav{overflow-x:auto;scrollbar-width:none}
+    .site-nav::-webkit-scrollbar{display:none}
+    .hero{padding:64px 22px 40px}
+    h1{font-size:36px}
+    .lead,.intro,.intro-copy p{font-size:19px}
+    section{margin-top:56px;padding-top:48px}
+    .feature-list{grid-template-columns:1fr}
+    .tip-screens{grid-template-columns:1fr;max-width:340px}
+    .layout>nav{padding:24px 20px}
+    article:not(.content) h2{font-size:24px}
+    footer{justify-content:center;text-align:center}
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--paper:#000000;--surface:#1c1c1e;--grey:#1c1c1e;--ink:#f5f5f7;--muted:#a1a1a6;--body:#d2d2d7;--line:#38383a;--accent:#2997ff}
+    header{background:rgba(0,0,0,.72);border-bottom-color:rgba(255,255,255,.12)}
+    .feature-shot{background:#2c2c2e}
+    .language-toggle{background:#1c1c1e;color:#f5f5f7;border-color:#38383a}
+    ::selection{background:#0a3d6e}
+  }
+</style>
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <div class="topline" aria-hidden="true"></div>
   <header>
-    <a class="brand" href="#top"><span class="brand-mark">✳</span>Stillline</a>
-    <div class="header-tools"><span class="header-note" data-i18n="tagline">A little room for what matters</span><button class="language-toggle" id="language-toggle" type="button" aria-label="切换到简体中文">中文</button></div>
+    <a class="brand" href="index.html" aria-label="Stillline Moments — Privacy Policy"><img class="brand-mark" src="stillline-mark.svg" alt=""><span class="brand-name"><span class="brand-localized">Stillline</span><span class="brand-en">Moments</span></span></a>
+    <nav class="site-nav" aria-label="Site navigation">
+      <a href="index.html" aria-current="page" data-nav-index="0">Privacy Policy</a>
+      <a href="product.html" data-nav-index="1">Product</a>
+      <a href="philosophy.html" data-nav-index="2">Our Philosophy</a>
+      <a href="tips.html" data-nav-index="3">Tips</a>
+      <a href="contact.html" data-nav-index="4">Contact</a>
+    </nav>
+    <div class="header-tools"><button class="language-toggle" id="language-toggle" type="button" aria-label="切换到简体中文">中文</button></div>
   </header>
-  <main id="top">
+  <main id="main">
     <div class="hero">
-      <div class="eyebrow">Your moments, your privacy</div>
       <h1>Privacy Policy</h1>
       <p class="intro">Stillline is a personal timeline for the moments you want to remember. Here is how the app handles the entries, dates, categories, and photos you choose to add.</p>
-      <div class="updated">Effective date: October 26, 2026</div>
+      <div class="updated">Effective date: November 14, 2026</div>
     </div>
     <div class="layout">
       <nav aria-label="On this page">
         <p>On this page</p>
-        <a href="#information">Information in the app</a>
-        <a href="#storage">Local storage</a>
-        <a href="#photos">Camera and photos</a>
-        <a href="#backups">iCloud and backups</a>
-        <a href="#sharing">Sharing and services</a>
-        <a href="#deletion">Retention and deletion</a>
-        <a href="#children">Children’s privacy</a>
-        <a href="#california">California privacy rights</a>
-        <a href="#changes">Changes to this policy</a>
-        <a href="#contact">Contact</a>
+        <a class="pop" style="--d:0.0s" href="#information">Information in the app</a>
+        <a class="pop" style="--d:0.2s" href="#storage">Local storage</a>
+        <a class="pop" style="--d:0.4s" href="#photos">Camera and photos</a>
+        <a class="pop" style="--d:0.6s" href="#backups">iCloud and backups</a>
+        <a class="pop" style="--d:0.8s" href="#sharing">Sharing and services</a>
+        <a class="pop" style="--d:1.0s" href="#deletion">Retention and deletion</a>
+        <a class="pop" style="--d:1.2s" href="#children">Children’s privacy</a>
+        <a class="pop" style="--d:1.4s" href="#california">California privacy rights</a>
+        <a class="pop" style="--d:1.6s" href="#changes">Changes to this policy</a>
+        <a class="pop" style="--d:1.8s" href="#contact">Contact</a>
       </nav>
       <article>
         <section id="information">
@@ -115,11 +191,11 @@
           <h2>2. How and Where Your Information Is Stored</h2>
           <p>Stillline is designed to store your timeline content locally on your device. Based on the current implementation:</p>
           <ul>
-            <li>Entries, categories, and trash data are stored as JSON files in the App’s local Application Support directory.</li>
+            <li>Entries, categories, and trash data are stored as JSON files in the App’s local storage, using the App Groups shared container when it is available so Home Screen widgets can read them.</li>
             <li>Photos attached to entries are stored as JPEG files in the App’s local Documents directory.</li>
             <li>Temporary in-memory caches may be used to display photos while the App is running.</li>
           </ul>
-          <p>The current version does not provide its own user account system, server-side database for timeline content, or cloud synchronization service. Based on our review of the current implementation, we have not identified functionality that uploads your timeline entries or attached photos to a server operated by us.</p>
+          <p>The current version does not provide its own user account system, server-side database for timeline content, or cloud synchronization service. The App does not upload your timeline entries or attached photos to a server operated by us.</p>
           <p>This description concerns the App’s own data-handling functionality. It does not cover data handling by iOS, device backups, or other services you independently choose to use.</p>
         </section>
         <section id="photos">
@@ -167,7 +243,7 @@
         <section id="california">
           <h2>8. California Privacy Rights</h2>
           <p>Depending on the circumstances and whether applicable law covers the developer and the relevant data processing, California residents may have rights under the California Consumer Privacy Act (CCPA), as amended by the California Privacy Rights Act (CPRA).</p>
-          <p>The current version of Stillline is designed to store timeline entries and attached photos locally on your device. We have not identified functionality in the current implementation that uploads this content to a server operated by us. We do not sell timeline entries or attached photos, or share that content for cross-context behavioral advertising through an App-operated service.</p>
+          <p>The current version of Stillline is designed to store timeline entries and attached photos locally on your device. The App does not upload this content to a server operated by us. We do not sell timeline entries or attached photos, or share that content for cross-context behavioral advertising through an App-operated service.</p>
           <p>Where applicable law grants you rights concerning personal information, those rights may include the right to know, access, delete, or correct certain personal information, the right to opt out of certain sales or sharing, and the right not to receive unlawful discriminatory treatment for exercising applicable privacy rights.</p>
           <p>Because the App does not maintain a server-side account or database for your timeline content, information stored locally can generally be managed through the App or by removing its local data from your device. This does not replace any obligations that may apply to us under applicable law.</p>
           <p>For privacy questions or requests, please contact us using the email address below. We will respond in accordance with applicable legal requirements.</p>
@@ -189,54 +265,88 @@
     </div>
   </main>
   <footer>
-    <span>© 2026 Stillline</span>
-    <span>Capture life, one moment at a time.</span>
+    <span>© 2026 Stillline Moments</span>
   </footer>
 <script>
   const zh = {
-    tagline: "为重要时刻留一方空间", eyebrow: "你的时刻，由你作主", title: "隐私政策",
+    title: "隐私政策",
     intro: "Stillline 是一款个人时间线应用，帮助你留住想要记得的时刻。以下说明应用如何处理你选择添加的记录、日期、分类和照片。",
-    effective: "生效日期：2026年10月26日", toc: "本页内容",
+    effective: "生效日期：2026年11月14日", toc: "本页内容",
     nav1: "你在应用中创建的信息", nav2: "本地存储", nav3: "相机和照片", nav4: "iCloud 与备份", nav5: "分享与第三方服务", nav6: "信息保留与删除", nav7: "儿童隐私", nav8: "加利福尼亚州隐私权", nav9: "政策变更", nav10: "联系我们",
     sections: [
       ["1. 你在应用中创建的信息", "Stillline 允许你记录个人时刻：创建记录、添加日期和时间、将记录归入分类，以及附加照片。", "根据你的使用方式，应用存储的信息可能包括：", "记录内容：你输入的标题、描述、日期和时间。", "分类和记录管理信息：你创建或选择的分类，以及与有效、已删除或已移至废纸篓的记录相关的信息。", "照片：你从照片图库中选择或用相机拍摄并附加到记录的图片。", "应用相关数据：存储、显示和管理记录及照片所需的文件和其他信息。", "使用应用的核心功能无需创建账户。"],
-      ["2. 信息的存储方式和位置", "Stillline 的设计是在你的设备本地存储时间线内容。根据当前实现：", "记录、分类和废纸篓数据以 JSON 文件形式存储在应用本地的 Application Support 目录中。", "附加到记录的照片以 JPEG 文件形式存储在应用本地的 Documents 目录中。", "应用运行时可能使用临时内存缓存来显示照片。", "当前版本不提供自有用户账户系统、用于时间线内容的服务器端数据库或云同步服务。根据我们对当前实现的审查，我们未发现会将你的时间线记录或附加照片上传到我们运营的服务器的功能。", "此说明仅涉及应用自身的数据处理功能，不涵盖 iOS、设备备份或你自行选择使用的其他服务如何处理数据。"],
+      ["2. 信息的存储方式和位置", "Stillline 的设计是在你的设备本地存储时间线内容。根据当前实现：", "记录、分类和废纸篓数据以 JSON 文件形式存储在应用本地存储中，在可用时会使用 App Groups 共享容器，以便桌面小组件读取。", "附加到记录的照片以 JPEG 文件形式存储在应用本地的 Documents 目录中。", "应用运行时可能使用临时内存缓存来显示照片。", "当前版本不提供自有用户账户系统、用于时间线内容的服务器端数据库或云同步服务。应用不会将你的时间线记录或附加照片上传到我们运营的服务器。", "此说明仅涉及应用自身的数据处理功能，不涵盖 iOS、设备备份或你自行选择使用的其他服务如何处理数据。"],
       ["3. 相机和照片图库", "从照片图库选择照片", "当你使用 iOS 系统照片选择器选取照片时，应用会处理所选图片，并在本地存储中保存副本，以便显示在相应的时间线记录中。", "使用相机拍照", "当你使用应用的相机功能拍照时，应用会调用 iOS 相机界面。拍摄后，应用会尝试将原始图片保存到设备的系统照片图库，并另外在应用本地存储中保存处理后的副本，用于时间线记录。", "这两项操作彼此独立。从 Stillline 记录中移除照片，不会自动删除已保存到系统照片图库的原始图片。你可以在 Apple 照片 App 中单独管理该图片。", "相机和照片访问受 iOS 提供的权限与设置控制。你可以在设备的“设置”中查看或更改相关权限。"],
       ["4. iCloud 和设备备份", "应用不提供自有的 iCloud 同步或云存储服务。", "不过，根据 iOS 行为和设备设置（包括是否启用了 iCloud 云备份），存储在应用本地目录中的文件可能会包含在设备备份中。", "设备备份由 Apple 管理，并受 Apple 的服务、政策和你的设备设置约束。我们不为你的时间线内容运营单独的备份服务。", "你可以通过设备上的相关设置查看和管理设备备份。单独保存到系统照片图库的照片，应通过照片 App 以及你所用服务的设置进行管理。"],
       ["5. 分享和第三方服务", "当前版本的 Stillline 不含广告功能，也不会有意集成第三方广告、分析或跟踪 SDK。", "我们不会出售你的时间线记录或附加照片，也不会通过由应用运营的服务，将这些内容分享给第三方用于其独立目的。", "应用使用 Apple 提供的 iOS 框架执行相机访问和照片选择等功能。Apple 通过其操作系统和服务处理信息的方式，受 Apple 自身条款和隐私惯例约束。", "你选择使用的其他服务（包括设备备份服务）可能会根据其自身政策和设置处理数据。"],
       ["6. 信息保留与删除", "你的记录和附加照片会保留在应用本地存储中，直到你将其删除，或应用及其关联本地数据从设备中移除；但仍受 iOS 的正常存储和备份行为影响。", "删除单个项目", "应用提供编辑记录、从记录中移除照片、将记录移至废纸篓、恢复支持的记录以及永久删除项目等控制功能。", "应用会根据本地存储的照片文件是否仍被记录或其他数据引用来管理这些文件。从一条记录中移除照片，不一定会删除仍在其他位置被引用的本地文件。", "移除应用", "删除 Stillline 会从设备中移除应用及其关联本地数据，具体受 iOS 行为影响。这不会自动删除单独保存到系统照片图库的照片或可能保留在设备备份中的副本。", "系统副本和备份", "保存到系统照片图库的照片以及包含在设备备份中的副本，必须通过照片 App、设备设置或相关服务设置单独管理。", "删除记录或卸载应用时，我们无法保证信息的每个副本都能立即从所有备份或其他由系统管理的位置移除。如对应用的删除功能有疑问，请通过下方邮箱联系我们。"],
       ["7. 儿童隐私", "Stillline 是一款面向一般用户的个人记录应用，并非专门面向儿童。", "应用无需账户，当前实现也不提供将时间线记录或附加照片传输到我们运营的服务器的服务。", "如果应用功能或目标受众发生变化，并影响儿童信息的处理方式，我们会酌情审查并更新本隐私政策。", "家长或监护人如对应用的隐私惯例有疑问，可通过下方联系方式联系我们。"],
-      ["8. 加利福尼亚州隐私权", "视具体情况以及适用法律是否涵盖开发者和相关数据处理活动而定，加利福尼亚州居民可能享有《加利福尼亚州消费者隐私法》（CCPA，经《加利福尼亚州隐私权法案》（CPRA）修订）赋予的权利。", "当前版本的 Stillline 旨在将时间线记录和附加照片存储在你的设备本地。我们未发现当前实现中存在将这些内容上传到我们运营的服务器的功能。我们不会出售时间线记录或附加照片，也不会通过应用运营的服务为跨场景行为广告分享这些内容。", "在适用法律赋予你有关个人信息的权利时，这些权利可能包括知情、访问、删除或更正某些个人信息的权利，选择退出某些出售或分享的权利，以及行使适用隐私权时不受非法歧视的权利。", "由于应用不为你的时间线内容维护服务器端账户或数据库，本地存储的信息通常可通过应用管理，或通过从设备中移除其本地数据来处理。本说明不免除适用法律可能规定的任何义务。", "如有隐私问题或请求，请通过下方邮箱联系我们。我们会按照适用法律要求作出回应。"],
+      ["8. 加利福尼亚州隐私权", "视具体情况以及适用法律是否涵盖开发者和相关数据处理活动而定，加利福尼亚州居民可能享有《加利福尼亚州消费者隐私法》（CCPA，经《加利福尼亚州隐私权法案》（CPRA）修订）赋予的权利。", "当前版本的 Stillline 旨在将时间线记录和附加照片存储在你的设备本地。应用不会将这些内容上传到我们运营的服务器。我们不会出售时间线记录或附加照片，也不会通过应用运营的服务为跨场景行为广告分享这些内容。", "在适用法律赋予你有关个人信息的权利时，这些权利可能包括知情、访问、删除或更正某些个人信息的权利，选择退出某些出售或分享的权利，以及行使适用隐私权时不受非法歧视的权利。", "由于应用不为你的时间线内容维护服务器端账户或数据库，本地存储的信息通常可通过应用管理，或通过从设备中移除其本地数据来处理。本说明不免除适用法律可能规定的任何义务。", "如有隐私问题或请求，请通过下方邮箱联系我们。我们会按照适用法律要求作出回应。"],
       ["9. 隐私政策变更", "当应用功能、数据处理惯例或适用法律要求发生变化时，我们可能会更新本隐私政策。", "任何更新版本都会发布在相同的公开网址，并注明修订后的生效日期。我们建议你定期查看本政策，尤其是在应用进行重大更新后。"],
       ["10. 联系我们", "如对本隐私政策或 Stillline 的隐私惯例有疑问，请联系："]
-    ], ending: "本隐私政策适用于当前版本的 Stillline。如果未来版本新增云同步、账户服务或其他数据处理功能，我们会酌情审查并更新本政策。", footer: "记录生活，一刻一瞬。"
+    ], ending: "本隐私政策适用于当前版本的 Stillline。如果未来版本新增云同步、账户服务或其他数据处理功能，我们会酌情审查并更新本政策。"
+  };
+  const siteNavLabels = {
+    en: ["Privacy Policy", "Product", "Design Philosophy", "Tips", "Contact"],
+    zh: ["隐私政策", "产品介绍", "设计理念", "使用技巧", "联系我们"]
+  };
+  const brandLabels = {
+    en: '<span class="brand-localized">Stillline</span><span class="brand-en">Moments</span>',
+    zh: '<span class="brand-localized">Stillline</span><span class="brand-en">Moments</span>'
   };
   const original = new Map();
   document.querySelectorAll("[data-i18n], .hero h1, .hero .intro, .hero .updated, nav p, nav a, article section, article > p, footer span").forEach((el) => original.set(el, el.innerHTML));
   const toggle = document.getElementById("language-toggle");
-  let isChinese = false;
-  toggle.addEventListener("click", () => {
-    isChinese = !isChinese;
+  const queryLanguage = new URLSearchParams(window.location.search).get("lang");
+  let savedLanguage = null;
+  try { savedLanguage = localStorage.getItem("stillline-language"); } catch {}
+  const browserChinese = typeof navigator !== "undefined" && /^zh/i.test(navigator.language || "");
+  let isChinese = queryLanguage ? queryLanguage === "zh" : (savedLanguage ? savedLanguage === "zh" : browserChinese);
+  function updateLanguageLinks() {
+    const links = [document.querySelector(".brand"), ...document.querySelectorAll(".site-nav a")];
+    links.forEach(a => {
+      const url = new URL(a.getAttribute("href"), window.location.href);
+      url.searchParams.set("lang", isChinese ? "zh" : "en");
+      const file = url.pathname.slice(url.pathname.lastIndexOf("/") + 1) || "index.html";
+      a.setAttribute("href", `${file}${url.search}${url.hash}`);
+    });
+  }
+  function setLanguage(chinese, persist = false) {
+    isChinese = chinese;
+    if (persist) {
+      try { localStorage.setItem("stillline-language", isChinese ? "zh" : "en"); } catch {}
+      try {
+        const url = new URL(window.location.href);
+        url.searchParams.set("lang", isChinese ? "zh" : "en");
+        window.history.replaceState(null, "", url.href);
+      } catch {}
+    }
     document.documentElement.lang = isChinese ? "zh-CN" : "en";
     toggle.textContent = isChinese ? "EN" : "中文";
     toggle.setAttribute("aria-label", isChinese ? "Switch to English" : "切换到简体中文");
-    document.title = isChinese ? "隐私政策 — Stillline" : "Privacy Policy — Stillline";
+    document.querySelector(".brand-name").innerHTML = brandLabels[isChinese ? "zh" : "en"];
+    document.querySelector(".brand").setAttribute("aria-label", isChinese ? "Stillline Moments — 隐私政策" : "Stillline Moments — Privacy Policy");
+    const siteNav = document.querySelector(".site-nav");
+    siteNav.setAttribute("aria-label", isChinese ? "网站导航" : "Site navigation");
+    siteNav.querySelectorAll("a").forEach(a => {
+      const i = Number(a.dataset.navIndex);
+      a.textContent = siteNavLabels[isChinese ? "zh" : "en"][i];
+    });
+    updateLanguageLinks();
+    document.title = isChinese ? "隐私政策 — Stillline Moments" : "Privacy Policy — Stillline Moments";
     document.querySelector('meta[name="description"]').content = isChinese ? "Stillline 隐私政策：了解应用如何处理你添加的记录、日期、分类和照片。" : "Privacy Policy for Stillline, a quiet space to keep life's moments.";
     if (!isChinese) { original.forEach((html, el) => el.innerHTML = html); return; }
-    document.querySelector('[data-i18n="tagline"]').textContent = zh.tagline;
     const hero = document.querySelector(".hero");
-    hero.querySelector(".eyebrow").textContent = zh.eyebrow;
     hero.querySelector("h1").textContent = zh.title;
     hero.querySelector(".intro").textContent = zh.intro;
     hero.querySelector(".updated").textContent = zh.effective;
-    const nav = document.querySelector("nav");
+    const nav = document.querySelector(".layout > nav");
     nav.querySelector("p").textContent = zh.toc;
     nav.querySelectorAll("a").forEach((a, i) => a.textContent = zh[`nav${i+1}`]);
     document.querySelectorAll("article section").forEach((section, i) => {
       const rows = zh.sections[i];
       section.querySelector("h2").textContent = rows[0];
-      const paras = [...section.querySelectorAll("p")], heads = [...section.querySelectorAll("h3")], items = [...section.querySelectorAll("li")];
-      let pi = 1, hi = 0, li = 0;
+      let pi = 1;
       [...section.children].forEach(el => {
         if (el.tagName === "P") el.textContent = rows[pi++];
         else if (el.tagName === "H3") el.textContent = rows[pi++];
@@ -247,10 +357,13 @@
           else liEl.textContent = text;
         });
       });
+      if (section.id === "contact") section.querySelector(".contact p:first-child").textContent = rows[1];
     });
     document.querySelector("article > p").textContent = zh.ending;
-    document.querySelectorAll("footer span")[1].textContent = zh.footer;
-  });
+  }
+  toggle.addEventListener("click", () => setLanguage(!isChinese, true));
+  setLanguage(isChinese);
 </script>
+  <script>requestAnimationFrame(function(){requestAnimationFrame(function(){document.body.classList.add('play');});});</script>
 </body>
 </html>

@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbfbfd">
+  <link rel="icon" type="image/svg+xml" href="stillline-mark.svg">
+  <link rel="icon" type="image/png" sizes="256x256" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <meta property="og:title" content="Stillline Moments — Product">
+  <meta property="og:description" content="Stillline Moments is a simple personal timeline app for recording everyday life, reflections, and work.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="description" content="Stillline Moments is a simple personal timeline app for recording everyday life, reflections, and work.">
+  <title>Stillline Moments — Product</title>
+  <style>
+  :root{
+    --paper:#fbfbfd; --surface:#ffffff; --grey:#f5f5f7; --ink:#1d1d1f;
+    --muted:#6e6e73; --body:#424245; --line:#d2d2d7; --accent:#0066cc;
+    --radius:18px;
+    --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scrollbar-gutter:stable}
+  body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  ::selection{background:#d9e8ff}
+  .skip-link{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:10px 16px;border-radius:0 0 8px 0;z-index:100}
+  .skip-link:focus{left:0;color:#fff}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+  .topline{display:none}
+  header{position:sticky;top:0;z-index:50;background:rgba(251,251,253,.82);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.08);display:flex;align-items:center;gap:24px;padding:8px max(22px,calc((100vw - 1024px)/2));min-height:52px}
+  .brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+  .brand:hover{text-decoration:none}
+  .brand-mark{height:36px;width:auto;display:block}
+  .brand-name{font-size:17px;font-weight:600;letter-spacing:-.01em;color:var(--ink);white-space:nowrap}
+  .brand-name .brand-en{font-weight:400;color:var(--muted)}
+  .brand span{font-weight:600}
+  .site-nav{display:flex;gap:2px;margin-left:auto;align-items:center}
+  .site-nav a{font-size:12px;line-height:1;color:var(--ink);padding:7px 11px;border-radius:999px;white-space:nowrap}
+  .site-nav a:hover{color:var(--accent);text-decoration:none;background:var(--grey)}
+  .site-nav a[aria-current="page"]{background:var(--grey);font-weight:600;color:var(--ink)}
+  .header-tools{display:flex;align-items:center;gap:12px;flex-shrink:0}
+  .language-toggle{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 13px;font:600 12px/1 var(--sans);color:var(--ink);cursor:pointer}
+  .language-toggle:hover{border-color:var(--muted)}
+  main{display:block;max-width:1024px;margin:0 auto;padding:0 22px 96px}
+  main>p{text-align:center;color:var(--muted);max-width:640px;margin:0 auto 12px}
+  main nav{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:center;margin-top:32px;padding-top:28px;border-top:1px solid var(--line)}
+  .content{max-width:1024px;margin:0 auto;padding:0 22px}
+  .hero{max-width:1024px;margin:0 auto;padding:88px 22px 56px;text-align:center}
+  article.content{padding-top:88px}
+  .eyebrow{font-size:17px;font-weight:600;color:var(--accent);margin:0 0 12px}
+  h1{font-size:clamp(40px,6vw,56px);line-height:1.08;letter-spacing:-.022em;font-weight:700;margin:0 0 16px;text-align:center}
+  .lead{font-size:21px;line-height:1.47;color:var(--muted);max-width:640px;margin:0 auto}
+  .intro{font-size:21px;line-height:1.47;color:var(--muted);max-width:680px;margin:0 auto}
+  .updated{margin-top:28px;font-size:14px;color:var(--muted)}
+  .intro-copy{max-width:680px;margin:0 auto}
+  .intro-copy p{font-size:21px;line-height:1.47;color:var(--muted);text-align:center;margin:0 0 12px}
+  .content>p{font-size:19px;line-height:1.6;color:var(--body);max-width:680px;margin:0 auto 16px;text-align:center}
+  section{margin-top:72px;padding-top:64px;border-top:1px solid var(--line)}
+  .features-section{margin-top:80px}
+  h2{font-size:clamp(28px,4vw,36px);line-height:1.15;letter-spacing:-.02em;font-weight:700;text-align:center;margin:0 0 16px}
+  h3{font-size:24px;line-height:1.25;font-weight:600;letter-spacing:-.015em;margin:0 0 8px;text-align:center}
+  .content section p{font-size:17px;line-height:1.6;color:var(--body);max-width:680px;margin:0 auto 12px;text-align:center}
+  .feature-list{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+  .feature{background:var(--grey);border-radius:var(--radius);padding:44px 32px 0;text-align:center;overflow:hidden;display:flex;flex-direction:column}
+  .feature h3{margin-bottom:10px}
+  .feature p{color:var(--body);font-size:17px;line-height:1.55;max-width:420px;margin:0 auto 28px;text-align:center}
+  .feature-shot{margin:auto 0 0;background:var(--surface);border-radius:14px 14px 0 0;padding:28px 24px 0;box-shadow:0 -4px 24px rgba(0,0,0,.04)}
+  .feature-shot img{width:220px;max-width:100%;height:auto;display:block;margin:0 auto;border-radius:12px 12px 0 0;box-shadow:0 12px 32px rgba(0,0,0,.12)}
+  .feature-framed{background:transparent}
+  .feature-framed .feature-shot{background:transparent;box-shadow:none;padding:0}
+  .feature-framed .feature-shot img{width:280px;border-radius:0;box-shadow:none}
+  /* Entrance pop-in for the three photos */
+  .js .pop{opacity:0;transform:translateY(28px) scale(.94)}
+  .js .play .pop{opacity:1;transform:translateY(0) scale(1);transition:opacity .55s ease var(--d,0s),transform .8s cubic-bezier(.34,1.56,.64,1) var(--d,0s)}
+  @media (prefers-reduced-motion:reduce){.js .pop{opacity:1;transform:none;transition:none}}
+  .tip-screens{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:640px;margin:36px auto 0}
+  .tip-screens-single{grid-template-columns:1fr;max-width:340px}
+  .tip-screens figure{margin:0;background:var(--grey);border-radius:var(--radius);padding:28px 24px 0;overflow:hidden}
+  .tip-screens img{width:220px;max-width:100%;height:auto;display:block;margin:0 auto;border-radius:12px 12px 0 0;box-shadow:0 12px 32px rgba(0,0,0,.12)}
+  .tip-note{max-width:640px;margin:28px auto 0;background:var(--grey);border-radius:14px;padding:16px 20px;font-size:15px;line-height:1.55;color:var(--body);text-align:left}
+  .tip-note strong{color:var(--ink)}
+  .closing{margin-top:96px;padding:64px 24px;background:var(--grey);border-radius:var(--radius);text-align:center}
+  .closing strong{font-size:clamp(24px,3.5vw,32px);line-height:1.2;letter-spacing:-.02em;font-weight:700}
+  .closing p{margin:14px auto 0;max-width:560px;color:var(--body);font-size:17px;text-align:center}
+  .signature{margin:16px 0 0;color:var(--muted);font-size:14px}
+  .last-line{margin:8px 0 0;color:var(--muted);font-size:17px}
+  .contact-card{max-width:520px;margin:36px auto 0;background:var(--grey);border-radius:var(--radius);padding:32px;text-align:center}
+  .contact-card p{margin:0 0 8px;font-size:19px;color:var(--ink);text-align:center}
+  .contact-card p:last-child{margin-bottom:0}
+  footer{background:var(--grey);color:var(--muted);font-size:12px;line-height:1.6;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:24px max(22px,calc((100vw - 1024px)/2))}
+  footer span{color:var(--muted)}
+  /* Privacy page: narrow centred legal column, TOC as a grey card */
+  .layout{display:block;max-width:980px;margin:0 auto;padding:0 22px}
+  .layout>nav{position:static;background:var(--grey);border-radius:var(--radius);padding:28px 32px;margin:40px 0 8px}
+  .layout>nav p{font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:0 0 14px}
+  .layout>nav a{display:inline-block;margin:0 20px 10px 0;font-size:15px;line-height:1.5}
+  article:not(.content) section{margin-top:56px;padding-top:48px}
+  article:not(.content) h2{font-size:28px;text-align:left;margin-bottom:14px}
+  article:not(.content) h3{font-size:20px;text-align:left;margin:24px 0 8px}
+  article:not(.content) p{font-size:17px;line-height:1.65;color:var(--body);text-align:left;max-width:none;margin:0 0 12px}
+  article:not(.content) ul{font-size:17px;line-height:1.65;color:var(--body);margin:0 0 12px;padding-left:22px}
+  article:not(.content) li{margin-bottom:6px}
+  article:not(.content)>p{font-size:17px;text-align:left;max-width:none;margin:0 0 12px}
+  article:not(.content) .contact{font-size:19px}
+
+  .tip-screens-framed{max-width:640px}
+  .tip-screens-framed figure{background:transparent;padding:0;border-radius:0;overflow:visible}
+  .tip-screens-framed img{width:280px;border-radius:0;box-shadow:none}
+  @media (max-width:760px){
+    header{gap:12px;padding:8px 16px}
+    .site-nav{overflow-x:auto;scrollbar-width:none}
+    .site-nav::-webkit-scrollbar{display:none}
+    .hero{padding:64px 22px 40px}
+    article.content{padding-top:64px}
+    h1{font-size:36px}
+    .lead,.intro,.intro-copy p{font-size:19px}
+    section{margin-top:56px;padding-top:48px}
+    .feature-list{grid-template-columns:1fr}
+    .tip-screens{grid-template-columns:1fr;max-width:340px}
+    .layout>nav{padding:24px 20px}
+    article:not(.content) h2{font-size:24px}
+    footer{justify-content:center;text-align:center}
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--paper:#000000;--surface:#1c1c1e;--grey:#1c1c1e;--ink:#f5f5f7;--muted:#a1a1a6;--body:#d2d2d7;--line:#38383a;--accent:#2997ff}
+    header{background:rgba(0,0,0,.72);border-bottom-color:rgba(255,255,255,.12)}
+    .feature-shot{background:#2c2c2e}
+    .language-toggle{background:#1c1c1e;color:#f5f5f7;border-color:#38383a}
+    ::selection{background:#0a3d6e}
+  }
+</style>
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="topline" aria-hidden="true"></div>
+  <header>
+    <a class="brand" href="index.html" aria-label="Stillline Moments — Product"><img class="brand-mark" src="stillline-mark.svg" alt=""><span class="brand-name"><span class="brand-localized">Stillline</span><span class="brand-en">Moments</span></span></a>
+    <nav class="site-nav" aria-label="Site navigation">
+      <a href="index.html" data-nav-index="0">Privacy Policy</a>
+      <a href="product.html" aria-current="page" data-nav-index="1">Product</a>
+      <a href="philosophy.html" data-nav-index="2">Our Philosophy</a>
+      <a href="tips.html" data-nav-index="3">Tips</a>
+      <a href="contact.html" data-nav-index="4">Contact</a>
+    </nav>
+    <div class="header-tools"><button class="language-toggle" id="language-toggle" type="button" aria-label="Switch to Simplified Chinese">中文</button></div>
+  </header>
+  <main id="main">
+    <article class="content">
+      <h1 data-copy="title">Your life, in one timeline.</h1>
+      <div class="intro-copy">
+        <p data-copy="intro1">Stillline Moments is a personal timeline for the moments that matter.</p>
+        <p data-copy="intro2">Write it down. Add a photo. Tap + and the moment is yours — to keep, to revisit, to remember.</p>
+      </div>
+
+      <section class="features-section">
+        <h2 data-copy="coreTitle">Made to be used every day.</h2>
+        <div class="feature-list">
+          <div class="feature feature-framed"><h3 data-copy="timelineTitle">Timeline</h3><p data-copy="timeline">Time does the organizing. Scroll back, and you’re there again.</p><figure class="feature-shot feature-shot-framed"><img src="网站截图/framed-timeline-countdown.webp" alt="Stillline Moments timeline, in an iPhone frame" width="760" height="1548" loading="lazy" decoding="async"></figure></div>
+          <div class="feature feature-framed"><h3 data-copy="textPhotoTitle">Words and photos</h3><p data-copy="textPhoto">A few words, a photo you took in passing. No forms, no fuss.</p><figure class="feature-shot feature-shot-framed pop" style="--d:0s"><img src="网站截图/framed-entry-photo.webp" alt="Stillline Moments text and photo view, in an iPhone frame" width="760" height="1548" loading="eager" decoding="async"></figure></div>
+          <div class="feature feature-framed"><h3 data-copy="categoriesTitle">Categories, your way</h3><p data-copy="categories">Life, Inspiration, Work — or whatever fits. Tap to make a category your own.</p><figure class="feature-shot feature-shot-framed pop" style="--d:.6s"><img src="网站截图/framed-home.webp" alt="Stillline Moments custom categories, in an iPhone frame" width="560" height="1140" loading="eager" decoding="async"></figure></div>
+          <div class="feature feature-framed"><h3 data-copy="searchTitle">Search</h3><p data-copy="search">Can’t remember when? Type a word, and the moment finds you.</p><figure class="feature-shot feature-shot-framed pop" style="--d:1.2s"><img src="网站截图/framed-search-results.webp" alt="Stillline Moments search view, in an iPhone frame" width="760" height="1548" loading="eager" decoding="async"></figure></div>
+        </div>
+      </section>
+
+      <section>
+        <h2 data-copy="privacyTitle">Private by design.</h2>
+        <p data-copy="privacy1">No account. No server. Your entries stay on your iPhone.</p>
+        <p data-copy="privacy2">Open the app and write. That’s all there is to it.</p>
+      </section>
+
+      <div class="closing">
+        <strong data-copy="closing">Record life. Keep the memories. See the path of time.</strong>
+        <p class="signature">Stillline Moments</p>
+      </div>
+    </article>
+  </main>
+  <footer>
+    <span>© 2026 Stillline Moments</span>
+  </footer>
+  <script>
+    const copy = {
+      en: {
+        title: "Your life, in one timeline.",
+        intro1: "Stillline Moments is a personal timeline for the moments that matter.",
+        intro2: "Write it down. Add a photo. Tap + and the moment is yours — to keep, to revisit, to remember.",
+        coreTitle: "Made to be used every day.", timelineTitle: "Timeline", timeline: "Time does the organizing. Scroll back, and you’re there again.",
+        textPhotoTitle: "Words and photos", textPhoto: "A few words, a photo you took in passing. No forms, no fuss.",
+        categoriesTitle: "Categories, your way", categories: "Life, Inspiration, Work — or whatever fits.",
+        searchTitle: "Search", search: "Can’t remember when? Type a word, and the moment finds you.",
+        privacyTitle: "Private by design.", privacy1: "No account. No server. Your entries stay on your iPhone.",
+        privacy2: "Open the app and write. That’s all there is to it.",
+        closing: "Record life. Keep the memories. See the path of time.",
+        titleTag: "Stillline Moments — Product", description: "Your life, in one timeline. Stillline Moments is a personal timeline for the moments that matter."
+      },
+      zh: {
+        title: "你的生活，一条时间线。",
+        intro1: "Stillline Moments 是一条为重要时刻准备的个人时间线。",
+        intro2: "写下来，拍下来。轻点 +，这一刻就留下来了——随时回来看看。",
+        coreTitle: "为每天使用而设计。", timelineTitle: "时间线", timeline: "时间会自己整理。向下滑，就能回到那一天。",
+        textPhotoTitle: "文字与照片", textPhoto: "几句话，一张随手拍的照片。不用填表，不用费事。",
+        categoriesTitle: "分类，按你的方式", categories: "生活、灵感、工作，或者别的什么。",
+        searchTitle: "搜索", search: "记不清是哪天了？输一个词，那一刻就回来找你。",
+        privacyTitle: "隐私，是设计的一部分。", privacy1: "不用注册，没有服务器。你的记录，只留在你的 iPhone 上。",
+        privacy2: "打开 App，就能写。就这么简单。",
+        closing: "记录生活。留住回忆。看见时间的轨迹。",
+        titleTag: "Stillline Moments — 产品介绍", description: "你的生活，一条时间线。Stillline Moments 是一条为重要时刻准备的个人时间线。"
+      }
+    };
+    const siteNavLabels = {
+      en: ["Privacy Policy", "Product", "Design Philosophy", "Tips", "Contact"],
+      zh: ["隐私政策", "产品介绍", "设计理念", "使用技巧", "联系我们"]
+    };
+    const brandLabels = {
+      en: '<span class="brand-localized">Stillline</span><span class="brand-en">Moments</span>',
+      zh: '<span class="brand-localized">Stillline</span><span class="brand-en">Moments</span>'
+    };
+    const toggle = document.getElementById("language-toggle");
+    const queryLanguage = new URLSearchParams(window.location.search).get("lang");
+    let savedLanguage = null;
+    try { savedLanguage = localStorage.getItem("stillline-language"); } catch {}
+    const browserChinese = typeof navigator !== "undefined" && /^zh/i.test(navigator.language || "");
+  let isChinese = queryLanguage ? queryLanguage === "zh" : (savedLanguage ? savedLanguage === "zh" : browserChinese);
+    function updateLanguageLinks() {
+      const links = [document.querySelector(".brand"), ...document.querySelectorAll(".site-nav a")];
+      links.forEach(a => {
+        const url = new URL(a.getAttribute("href"), window.location.href);
+        url.searchParams.set("lang", isChinese ? "zh" : "en");
+        const file = url.pathname.slice(url.pathname.lastIndexOf("/") + 1) || "index.html";
+        a.setAttribute("href", `${file}${url.search}${url.hash}`);
+      });
+    }
+    function setLanguage(chinese, persist = false) {
+      isChinese = chinese;
+      if (persist) {
+        try { localStorage.setItem("stillline-language", isChinese ? "zh" : "en"); } catch {}
+        try {
+          const url = new URL(window.location.href);
+          url.searchParams.set("lang", isChinese ? "zh" : "en");
+          window.history.replaceState(null, "", url.href);
+        } catch {}
+      }
+      const language = isChinese ? "zh" : "en";
+      document.documentElement.lang = isChinese ? "zh-CN" : "en";
+      document.title = copy[language].titleTag;
+      document.querySelector('meta[name="description"]').content = copy[language].description;
+      document.querySelectorAll("[data-copy]").forEach(el => el.textContent = copy[language][el.dataset.copy]);
+      document.querySelector(".brand-name").innerHTML = brandLabels[language];
+      document.querySelector(".brand").setAttribute("aria-label", isChinese ? "Stillline Moments — 产品介绍" : "Stillline Moments — Product");
+      const nav = document.querySelector(".site-nav");
+      nav.setAttribute("aria-label", isChinese ? "网站导航" : "Site navigation");
+      nav.querySelectorAll("a").forEach(a => {
+        const index = Number(a.dataset.navIndex);
+        a.textContent = siteNavLabels[language][index];
+      });
+      updateLanguageLinks();
+      toggle.textContent = isChinese ? "EN" : "中文";
+      toggle.setAttribute("aria-label", isChinese ? "Switch to English" : "切换到简体中文");
+    }
+    toggle.addEventListener("click", () => setLanguage(!isChinese, true));
+    setLanguage(isChinese);
+  </script>
+  <script>
+    (function(){
+      var list=document.querySelector('.feature-list');
+      if(!list) return;
+      function play(){list.classList.add('play');}
+      if(!('IntersectionObserver' in window)){play();return;}
+      var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){play();io.disconnect();}});},{threshold:.15});
+      io.observe(list);
+    })();
+  </script>
+</body>
+</html>
