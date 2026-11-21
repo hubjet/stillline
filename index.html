@@ -158,7 +158,7 @@
     <div class="hero">
       <h1>Privacy Policy</h1>
       <p class="intro">Stillline is a personal timeline for the moments you want to remember. Here is how the app handles the entries, dates, categories, and photos you choose to add.</p>
-      <div class="updated">Effective date: November 14, 2026</div>
+      <div class="updated">Effective date: November 20, 2026</div>
     </div>
     <div class="layout">
       <nav aria-label="On this page">
@@ -195,7 +195,7 @@
             <li>Photos attached to entries are stored as JPEG files in the App’s local Documents directory.</li>
             <li>Temporary in-memory caches may be used to display photos while the App is running.</li>
           </ul>
-          <p>The current version does not provide its own user account system, server-side database for timeline content, or cloud synchronization service. The App does not upload your timeline entries or attached photos to a server operated by us.</p>
+          <p>The App does not require its own user account, and we do not operate a server-side database for your timeline content. Starting with version 1.4, the App can synchronize your timeline content through iCloud; see Section 4. iCloud sync is on by default, and you can turn it off in the App's iCloud Sync settings — turning it off only stops synchronization and does not delete your local data. Apart from iCloud sync, the App does not upload your timeline entries or attached photos to a server operated by us.</p>
           <p>This description concerns the App’s own data-handling functionality. It does not cover data handling by iOS, device backups, or other services you independently choose to use.</p>
         </section>
         <section id="photos">
@@ -209,7 +209,9 @@
         </section>
         <section id="backups">
           <h2>4. iCloud and Device Backups</h2>
-          <p>The App does not implement its own iCloud synchronization or cloud storage service.</p>
+          <p>Starting with version 1.4, Stillline can synchronize your timeline content between your devices through iCloud, using Apple's CloudKit service and your own iCloud account. Synchronization is on by default. It works only when you are signed in to iCloud on your device and iCloud is enabled in your device settings; you can turn it off at any time in the App's iCloud Sync settings. Turning it off only stops synchronization — it does not delete your local data.</p>
+          <p>When iCloud sync is on, the App synchronizes your entries (titles, descriptions, dates, categories, countdown settings, and attached photos), your categories (names and icons), and records of permanently deleted items, so deletions are also reflected on your other devices. Items moved to the trash are also synchronized, so moving an entry to the trash or restoring it is reflected on your other devices. The order of your categories, your theme color, text size, and default category are kept only on the device and are not synchronized.</p>
+          <p>Your synced data is stored in your own iCloud account through Apple's CloudKit service. We do not operate a server for this, and we cannot access your synced data. How Apple handles information in iCloud is governed by Apple's own terms and privacy practices.</p>
           <p>However, files stored in the App’s local directories may be included in device backups, depending on iOS behavior and your device settings, including whether iCloud Backup is enabled.</p>
           <p>Device backups are managed by Apple and are subject to Apple’s services, policies, and your device settings. We do not operate a separate backup service for your timeline content.</p>
           <p>You can review and manage your device backups through the relevant settings on your device. Photos saved separately to your system photo library must be managed through the Photos app and the settings for the services you use.</p>
@@ -225,10 +227,10 @@
           <h2>6. Data Retention and Deletion</h2>
           <p>Your entries and attached photos remain in the App’s local storage until you delete them or the App and its associated local data are removed from your device, subject to normal iOS storage and backup behavior.</p>
           <h3>Deleting individual items</h3>
-          <p>The App provides controls to edit entries, remove photos from entries, move entries to the trash, restore supported entries, and permanently delete items.</p>
+          <p>The App provides controls to edit entries, remove photos from entries, move entries to the trash, restore supported entries, and permanently delete items. When iCloud sync is on, permanently deleting an entry also removes it from your other devices, and moving an entry to the trash or restoring it is also reflected on your other devices.</p>
           <p>The App manages locally stored photo files according to whether they are still referenced by entries or other records. Removing a photo from one entry does not necessarily remove a local file that is still referenced elsewhere.</p>
           <h3>Removing the App</h3>
-          <p>Deleting Stillline removes the App and its associated local data from the device, subject to iOS behavior. This does not automatically delete photos separately saved to your system photo library or copies that may be retained in device backups.</p>
+          <p>Deleting Stillline removes the App and its associated local data from the device, subject to iOS behavior. This does not automatically delete photos separately saved to your system photo library or copies that may be retained in device backups. If iCloud sync is on, a copy of your synced data is also stored in your iCloud account; removing the App does not automatically delete that copy, and you can manage it through your iCloud settings.</p>
           <h3>System-level copies and backups</h3>
           <p>Photos saved to your system photo library and copies included in device backups must be managed separately through the Photos app and your device or relevant service settings.</p>
           <p>The App cannot guarantee that every copy of information will be immediately removed from every backup or other system-managed location when you delete an entry or uninstall the App. For questions about the App’s deletion features, contact us using the email address below.</p>
@@ -243,7 +245,7 @@
         <section id="california">
           <h2>8. California Privacy Rights</h2>
           <p>Depending on the circumstances and whether applicable law covers the developer and the relevant data processing, California residents may have rights under the California Consumer Privacy Act (CCPA), as amended by the California Privacy Rights Act (CPRA).</p>
-          <p>The current version of Stillline is designed to store timeline entries and attached photos locally on your device. The App does not upload this content to a server operated by us. We do not sell timeline entries or attached photos, or share that content for cross-context behavioral advertising through an App-operated service.</p>
+          <p>Stillline is designed to store timeline entries and attached photos locally on your device. Starting with version 1.4, iCloud sync (on by default; see Section 4) also stores a copy in your iCloud account. The App does not upload this content to a server operated by us. We do not sell timeline entries or attached photos, or share that content for cross-context behavioral advertising through an App-operated service.</p>
           <p>Where applicable law grants you rights concerning personal information, those rights may include the right to know, access, delete, or correct certain personal information, the right to opt out of certain sales or sharing, and the right not to receive unlawful discriminatory treatment for exercising applicable privacy rights.</p>
           <p>Because the App does not maintain a server-side account or database for your timeline content, information stored locally can generally be managed through the App or by removing its local data from your device. This does not replace any obligations that may apply to us under applicable law.</p>
           <p>For privacy questions or requests, please contact us using the email address below. We will respond in accordance with applicable legal requirements.</p>
@@ -260,7 +262,7 @@
             <p><strong>XING WEI</strong><br><a href="mailto:janstaee@gmail.com">janstaee@gmail.com</a></p>
           </div>
         </section>
-        <p>This Privacy Policy applies to the current version of Stillline. If future versions introduce features such as cloud synchronization, account services, or additional data processing, this policy will be reviewed and updated as appropriate.</p>
+        <p>This Privacy Policy was updated for version 1.4, which introduced iCloud synchronization. If future versions introduce account services or additional data processing, this policy will be reviewed and updated as appropriate.</p>
       </article>
     </div>
   </main>
@@ -271,20 +273,20 @@
   const zh = {
     title: "隐私政策",
     intro: "Stillline 是一款个人时间线应用，帮助你留住想要记得的时刻。以下说明应用如何处理你选择添加的记录、日期、分类和照片。",
-    effective: "生效日期：2026年11月14日", toc: "本页内容",
+    effective: "生效日期：2026年11月20日", toc: "本页内容",
     nav1: "你在应用中创建的信息", nav2: "本地存储", nav3: "相机和照片", nav4: "iCloud 与备份", nav5: "分享与第三方服务", nav6: "信息保留与删除", nav7: "儿童隐私", nav8: "加利福尼亚州隐私权", nav9: "政策变更", nav10: "联系我们",
     sections: [
       ["1. 你在应用中创建的信息", "Stillline 允许你记录个人时刻：创建记录、添加日期和时间、将记录归入分类，以及附加照片。", "根据你的使用方式，应用存储的信息可能包括：", "记录内容：你输入的标题、描述、日期和时间。", "分类和记录管理信息：你创建或选择的分类，以及与有效、已删除或已移至废纸篓的记录相关的信息。", "照片：你从照片图库中选择或用相机拍摄并附加到记录的图片。", "应用相关数据：存储、显示和管理记录及照片所需的文件和其他信息。", "使用应用的核心功能无需创建账户。"],
-      ["2. 信息的存储方式和位置", "Stillline 的设计是在你的设备本地存储时间线内容。根据当前实现：", "记录、分类和废纸篓数据以 JSON 文件形式存储在应用本地存储中，在可用时会使用 App Groups 共享容器，以便桌面小组件读取。", "附加到记录的照片以 JPEG 文件形式存储在应用本地的 Documents 目录中。", "应用运行时可能使用临时内存缓存来显示照片。", "当前版本不提供自有用户账户系统、用于时间线内容的服务器端数据库或云同步服务。应用不会将你的时间线记录或附加照片上传到我们运营的服务器。", "此说明仅涉及应用自身的数据处理功能，不涵盖 iOS、设备备份或你自行选择使用的其他服务如何处理数据。"],
+      ["2. 信息的存储方式和位置", "Stillline 的设计是在你的设备本地存储时间线内容。根据当前实现：", "记录、分类和废纸篓数据以 JSON 文件形式存储在应用本地存储中，在可用时会使用 App Groups 共享容器，以便桌面小组件读取。", "附加到记录的照片以 JPEG 文件形式存储在应用本地的 Documents 目录中。", "应用运行时可能使用临时内存缓存来显示照片。", "应用无需自有账户，我们也不为你的时间线内容运营服务器端数据库。从 1.4 版本起，应用可通过 iCloud 同步时间线内容，详见第 4 节。iCloud 同步默认开启，你可以在应用的“iCloud 同步”设置中关闭；关闭只会停止同步，不会删除你的本地数据。除 iCloud 同步外，应用不会将你的时间线记录或附加照片上传到我们运营的服务器。", "此说明仅涉及应用自身的数据处理功能，不涵盖 iOS、设备备份或你自行选择使用的其他服务如何处理数据。"],
       ["3. 相机和照片图库", "从照片图库选择照片", "当你使用 iOS 系统照片选择器选取照片时，应用会处理所选图片，并在本地存储中保存副本，以便显示在相应的时间线记录中。", "使用相机拍照", "当你使用应用的相机功能拍照时，应用会调用 iOS 相机界面。拍摄后，应用会尝试将原始图片保存到设备的系统照片图库，并另外在应用本地存储中保存处理后的副本，用于时间线记录。", "这两项操作彼此独立。从 Stillline 记录中移除照片，不会自动删除已保存到系统照片图库的原始图片。你可以在 Apple 照片 App 中单独管理该图片。", "相机和照片访问受 iOS 提供的权限与设置控制。你可以在设备的“设置”中查看或更改相关权限。"],
-      ["4. iCloud 和设备备份", "应用不提供自有的 iCloud 同步或云存储服务。", "不过，根据 iOS 行为和设备设置（包括是否启用了 iCloud 云备份），存储在应用本地目录中的文件可能会包含在设备备份中。", "设备备份由 Apple 管理，并受 Apple 的服务、政策和你的设备设置约束。我们不为你的时间线内容运营单独的备份服务。", "你可以通过设备上的相关设置查看和管理设备备份。单独保存到系统照片图库的照片，应通过照片 App 以及你所用服务的设置进行管理。"],
+      ["4. iCloud 和设备备份", "从 1.4 版本起，Stillline 可通过 iCloud 在你的设备之间同步时间线内容，使用 Apple 的 CloudKit 服务和你自己的 iCloud 账户。同步默认开启；只有在设备上登录了 iCloud 且开启了 iCloud 功能时才会同步，你可以随时在应用的“iCloud 同步”设置中关闭。关闭只会停止同步，不会删除你的本地数据。", "开启 iCloud 同步后，应用会同步你的记录（标题、描述、日期、分类、倒计时设置和附加照片）、分类（名称和图标），以及永久删除的记录，以便删除操作也在其他设备上生效。移入废纸篓的内容也会同步，扔进废纸篓或从废纸篓恢复都会在其他设备上生效。分类顺序、主题颜色、文字大小和默认分类只保存在本机，不会同步。", "同步的数据存储在你自己的 iCloud 账户中，通过 Apple 的 CloudKit 服务传输和保存。我们不为此运营服务器，也无法访问你的同步数据。Apple 如何处理 iCloud 中的信息，受 Apple 自身条款和隐私惯例约束。", "不过，根据 iOS 行为和设备设置（包括是否启用了 iCloud 云备份），存储在应用本地目录中的文件可能会包含在设备备份中。", "设备备份由 Apple 管理，并受 Apple 的服务、政策和你的设备设置约束。我们不为你的时间线内容运营单独的备份服务。", "你可以通过设备上的相关设置查看和管理设备备份。单独保存到系统照片图库的照片，应通过照片 App 以及你所用服务的设置进行管理。"],
       ["5. 分享和第三方服务", "当前版本的 Stillline 不含广告功能，也不会有意集成第三方广告、分析或跟踪 SDK。", "我们不会出售你的时间线记录或附加照片，也不会通过由应用运营的服务，将这些内容分享给第三方用于其独立目的。", "应用使用 Apple 提供的 iOS 框架执行相机访问和照片选择等功能。Apple 通过其操作系统和服务处理信息的方式，受 Apple 自身条款和隐私惯例约束。", "你选择使用的其他服务（包括设备备份服务）可能会根据其自身政策和设置处理数据。"],
-      ["6. 信息保留与删除", "你的记录和附加照片会保留在应用本地存储中，直到你将其删除，或应用及其关联本地数据从设备中移除；但仍受 iOS 的正常存储和备份行为影响。", "删除单个项目", "应用提供编辑记录、从记录中移除照片、将记录移至废纸篓、恢复支持的记录以及永久删除项目等控制功能。", "应用会根据本地存储的照片文件是否仍被记录或其他数据引用来管理这些文件。从一条记录中移除照片，不一定会删除仍在其他位置被引用的本地文件。", "移除应用", "删除 Stillline 会从设备中移除应用及其关联本地数据，具体受 iOS 行为影响。这不会自动删除单独保存到系统照片图库的照片或可能保留在设备备份中的副本。", "系统副本和备份", "保存到系统照片图库的照片以及包含在设备备份中的副本，必须通过照片 App、设备设置或相关服务设置单独管理。", "删除记录或卸载应用时，我们无法保证信息的每个副本都能立即从所有备份或其他由系统管理的位置移除。如对应用的删除功能有疑问，请通过下方邮箱联系我们。"],
+      ["6. 信息保留与删除", "你的记录和附加照片会保留在应用本地存储中，直到你将其删除，或应用及其关联本地数据从设备中移除；但仍受 iOS 的正常存储和备份行为影响。", "删除单个项目", "应用提供编辑记录、从记录中移除照片、将记录移至废纸篓、恢复支持的记录以及永久删除项目等控制功能。开启 iCloud 同步后，永久删除记录也会在其他设备上同步删除；移入废纸篓或从废纸篓恢复也会同步。", "应用会根据本地存储的照片文件是否仍被记录或其他数据引用来管理这些文件。从一条记录中移除照片，不一定会删除仍在其他位置被引用的本地文件。", "移除应用", "删除 Stillline 会从设备中移除应用及其关联本地数据，具体受 iOS 行为影响。这不会自动删除单独保存到系统照片图库的照片或可能保留在设备备份中的副本。开启 iCloud 同步后，同步数据的副本也会保存在你的 iCloud 账户中；移除应用不会自动删除该副本，你可以通过 iCloud 设置进行管理。", "系统副本和备份", "保存到系统照片图库的照片以及包含在设备备份中的副本，必须通过照片 App、设备设置或相关服务设置单独管理。", "删除记录或卸载应用时，我们无法保证信息的每个副本都能立即从所有备份或其他由系统管理的位置移除。如对应用的删除功能有疑问，请通过下方邮箱联系我们。"],
       ["7. 儿童隐私", "Stillline 是一款面向一般用户的个人记录应用，并非专门面向儿童。", "应用无需账户，当前实现也不提供将时间线记录或附加照片传输到我们运营的服务器的服务。", "如果应用功能或目标受众发生变化，并影响儿童信息的处理方式，我们会酌情审查并更新本隐私政策。", "家长或监护人如对应用的隐私惯例有疑问，可通过下方联系方式联系我们。"],
-      ["8. 加利福尼亚州隐私权", "视具体情况以及适用法律是否涵盖开发者和相关数据处理活动而定，加利福尼亚州居民可能享有《加利福尼亚州消费者隐私法》（CCPA，经《加利福尼亚州隐私权法案》（CPRA）修订）赋予的权利。", "当前版本的 Stillline 旨在将时间线记录和附加照片存储在你的设备本地。应用不会将这些内容上传到我们运营的服务器。我们不会出售时间线记录或附加照片，也不会通过应用运营的服务为跨场景行为广告分享这些内容。", "在适用法律赋予你有关个人信息的权利时，这些权利可能包括知情、访问、删除或更正某些个人信息的权利，选择退出某些出售或分享的权利，以及行使适用隐私权时不受非法歧视的权利。", "由于应用不为你的时间线内容维护服务器端账户或数据库，本地存储的信息通常可通过应用管理，或通过从设备中移除其本地数据来处理。本说明不免除适用法律可能规定的任何义务。", "如有隐私问题或请求，请通过下方邮箱联系我们。我们会按照适用法律要求作出回应。"],
+      ["8. 加利福尼亚州隐私权", "视具体情况以及适用法律是否涵盖开发者和相关数据处理活动而定，加利福尼亚州居民可能享有《加利福尼亚州消费者隐私法》（CCPA，经《加利福尼亚州隐私权法案》（CPRA）修订）赋予的权利。", "Stillline 旨在将时间线记录和附加照片存储在你的设备本地。从 1.4 版本起，iCloud 同步（默认开启，详见第 4 节）也会在你的 iCloud 账户中保存一份副本。应用不会将这些内容上传到我们运营的服务器。我们不会出售时间线记录或附加照片，也不会通过应用运营的服务为跨场景行为广告分享这些内容。", "在适用法律赋予你有关个人信息的权利时，这些权利可能包括知情、访问、删除或更正某些个人信息的权利，选择退出某些出售或分享的权利，以及行使适用隐私权时不受非法歧视的权利。", "由于应用不为你的时间线内容维护服务器端账户或数据库，本地存储的信息通常可通过应用管理，或通过从设备中移除其本地数据来处理。本说明不免除适用法律可能规定的任何义务。", "如有隐私问题或请求，请通过下方邮箱联系我们。我们会按照适用法律要求作出回应。"],
       ["9. 隐私政策变更", "当应用功能、数据处理惯例或适用法律要求发生变化时，我们可能会更新本隐私政策。", "任何更新版本都会发布在相同的公开网址，并注明修订后的生效日期。我们建议你定期查看本政策，尤其是在应用进行重大更新后。"],
       ["10. 联系我们", "如对本隐私政策或 Stillline 的隐私惯例有疑问，请联系："]
-    ], ending: "本隐私政策适用于当前版本的 Stillline。如果未来版本新增云同步、账户服务或其他数据处理功能，我们会酌情审查并更新本政策。"
+    ], ending: "本隐私政策已针对 1.4 版本更新，该版本新增了 iCloud 同步功能。如果未来版本新增账户服务或其他数据处理功能，我们会酌情审查并更新本政策。"
   };
   const siteNavLabels = {
     en: ["Privacy Policy", "Product", "Design Philosophy", "Tips", "Contact"],
